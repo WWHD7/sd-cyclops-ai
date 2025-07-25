@@ -273,6 +273,126 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Platform Features Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col gap-4 items-center text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
+              Simple and intuitive AI platform tailored for manufacturing
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-[800px]">
+              Experience the power of AI without the complexity. Our platform streamlines quality control for manufacturing processes.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Screenshot */}
+            <div className="relative group">
+              <div className="relative rounded-2xl overflow-hidden border border-border/50 shadow-2xl">
+                <Image
+                  src="/images/No-code-Platform-Screenshot2.png"
+                  alt="No-code AI platform interface"
+                  width={720}
+                  height={480}
+                  className="w-full h-auto"
+                  priority
+                />
+                {/* Reflection effect */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
+              </div>
+              {/* Ambient light effect */}
+              <div className="absolute -inset-x-20 -inset-y-20 bg-primary/20 rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
+            </div>
+
+            {/* Features List */}
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                      <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                      <path d="M15 2v4" />
+                      <path d="M8 2v4" />
+                      <path d="M3 10h18" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">No-Code Setup</h3>
+                    <p className="text-muted-foreground mt-2">
+                      Deploy AI solutions without writing a single line of code. Intuitive interface for quick setup and configuration.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">Customizable Workflows</h3>
+                    <p className="text-muted-foreground mt-2">
+                      Design and customize inspection workflows that match your specific manufacturing requirements.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                      <polyline points="3.29 7 12 12 20.71 7" />
+                      <line x1="12" y1="22" x2="12" y2="12" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">Automated Model Training & Deployment</h3>
+                    <p className="text-muted-foreground mt-2">
+                      Automated AI model training and seamless deployment to your production environment.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                      <path d="M21 12a9 9 0 0 0-9-9" />
+                      <path d="M15.5 10.5a3.5 3.5 0 0 0-7 0" />
+                      <path d="M12 21a9 9 0 0 0 9-9" />
+                      <circle cx="12" cy="12" r="1" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">Edge Inferencing</h3>
+                    <p className="text-muted-foreground mt-2">
+                      Process data at the edge for real-time insights and reduced latency in your manufacturing line.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                      <rect width="18" height="18" x="3" y="3" rx="2" />
+                      <path d="M12 8v8" />
+                      <path d="m8.5 12 7-4" />
+                      <path d="m8.5 12 7 4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold">Hardware Agnostic</h3>
+                    <p className="text-muted-foreground mt-2">
+                      Compatible with a wide range of hardware setups, ensuring flexibility in your manufacturing environment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section id="demo" className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -1,17 +1,22 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import dbConnect from '@/lib/db';
+import Contact from '@/models/Contact';
 
 // Email configuration
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_APP_PASSWORD, // Use App Password for Gmail
+    pass: process.env.EMAIL_APP_PASSWORD,
   },
 });
 
 export async function POST(request: Request) {
   try {
+    // Connect to database
+    await dbConnect();
+
     const data = await request.json();
     const { name, email, company, message } = data;
 
@@ -23,10 +28,18 @@ export async function POST(request: Request) {
       );
     }
 
+    // Store in database
+    const contact = await Contact.create({
+      name,
+      email,
+      company,
+      message,
+    });
+
     // Send email notification
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: process.env.NOTIFICATION_EMAIL, // Where you want to receive notifications
+      to: process.env.NOTIFICATION_EMAIL,
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -51,10 +64,10 @@ export async function POST(request: Request) {
       `,
     });
 
-    // Store in database (we'll implement this next)
-    // await prisma.contact.create({ data: { name, email, company, message } });
-
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ 
+      success: true,
+      data: contact
+    });
   } catch (error) {
     console.error('Form submission error:', error);
     return NextResponse.json(
