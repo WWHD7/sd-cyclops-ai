@@ -9,9 +9,8 @@ declare global {
   var mongoose: MongooseCache | undefined;
 }
 
-if (!process.env.MONGODB_URI) {
-  throw new Error('Please add your MongoDB URI to .env.local');
-}
+// Make MongoDB connection optional
+const MONGODB_URI = process.env.MONGODB_URI;
 
 const cached: MongooseCache = global.mongoose || { conn: null, promise: null };
 
@@ -20,6 +19,12 @@ if (!global.mongoose) {
 }
 
 async function dbConnect() {
+  // If no MongoDB URI is provided, return null
+  if (!MONGODB_URI) {
+    console.warn('MongoDB URI not provided. Database features will be disabled.');
+    return null;
+  }
+
   if (cached.conn) {
     return cached.conn;
   }
@@ -29,14 +34,15 @@ async function dbConnect() {
       bufferCommands: false,
     };
 
-    cached.promise = mongoose.connect(process.env.MONGODB_URI!, opts);
+    cached.promise = mongoose.connect(MONGODB_URI, opts);
   }
 
   try {
     cached.conn = await cached.promise;
   } catch (e) {
     cached.promise = null;
-    throw e;
+    console.error('MongoDB connection error:', e);
+    return null;
   }
 
   return cached.conn;
