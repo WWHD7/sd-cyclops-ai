@@ -1,4 +1,22 @@
 import Image from "next/image";
+import {
+  Car,
+  Cpu,
+  Pill,
+  Coffee,
+  Plane,
+  Package,
+  MonitorCheck,
+  Brain,
+  Zap,
+  BarChart3,
+  Camera,
+  Shield,
+  Factory,
+  Microscope,
+  Ruler,
+  ScanLine,
+} from 'lucide-react';
 
 export default function Home() {
   return (
@@ -458,32 +476,32 @@ export default function Home() {
                 {
                   title: "Automotive",
                   description: "Quality control for automotive parts, assembly lines, and final product inspection.",
-                  icon: "🚗",
+                  icon: <Car className="w-6 h-6" />,
                 },
                 {
                   title: "Electronics",
                   description: "PCB inspection, component verification, and assembly validation.",
-                  icon: "🔌",
+                  icon: <Cpu className="w-6 h-6" />,
                 },
                 {
                   title: "Pharmaceuticals",
                   description: "Package integrity, label verification, and product quality assurance.",
-                  icon: "💊",
+                  icon: <Pill className="w-6 h-6" />,
                 },
                 {
                   title: "Food & Beverage",
                   description: "Packaging inspection, contamination detection, and quality verification.",
-                  icon: "🥤",
+                  icon: <Coffee className="w-6 h-6" />,
                 },
                 {
                   title: "Aerospace",
                   description: "High-precision part inspection and critical component validation.",
-                  icon: "✈️",
+                  icon: <Plane className="w-6 h-6" />,
                 },
                 {
                   title: "Consumer Goods",
                   description: "Product quality control, packaging verification, and defect detection.",
-                  icon: "📦",
+                  icon: <Package className="w-6 h-6" />,
                 },
               ].map((industry) => (
                 <div
@@ -493,7 +511,7 @@ export default function Home() {
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/50 to-accent/50 rounded-lg blur opacity-5 group-hover:opacity-10 transition duration-500"></div>
                   <div className="relative flex flex-col gap-4 rounded-lg border border-foreground/10 bg-white/5 p-6 transition duration-300 group-hover:border-foreground/20">
                     <div className="flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-2xl group-hover:bg-primary/20 transition-colors">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
                         {industry.icon}
                       </div>
                       <h3 className="text-lg font-semibold leading-8">{industry.title}</h3>
@@ -540,7 +558,7 @@ export default function Home() {
                     "Connection quality check",
                     "Real-time error detection"
                   ],
-                  icon: "🔧"
+                  icon: <Factory className="w-6 h-6" />
                 },
                 {
                   title: "Cosmetic Inspection AI",
@@ -551,7 +569,7 @@ export default function Home() {
                     "Finish quality validation",
                     "Texture analysis"
                   ],
-                  icon: "🔍"
+                  icon: <Microscope className="w-6 h-6" />
                 },
                 {
                   title: "Dimensioning AI",
@@ -562,7 +580,7 @@ export default function Home() {
                     "Geometric analysis",
                     "3D inspection"
                   ],
-                  icon: "📏"
+                  icon: <Ruler className="w-6 h-6" />
                 },
                 {
                   title: "Label Inspection AI",
@@ -573,7 +591,7 @@ export default function Home() {
                     "Label placement check",
                     "Compliance verification"
                   ],
-                  icon: "🏷️"
+                  icon: <ScanLine className="w-6 h-6" />
                 },
               ].map((app) => (
                 <div
